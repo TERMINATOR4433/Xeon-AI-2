@@ -1,0 +1,20 @@
+.v{
+    height: 90%;
+    width: 90%;
+    color: cyan;
+}
+
+body{
+    background: black;
+}
+
+input{
+    color: rgb(19, 1, 1);
+    background: cyan;
+    border: 2px solid cyan;
+}
+
+input:hover{
+    background: transparent;
+    color: white;
+}
