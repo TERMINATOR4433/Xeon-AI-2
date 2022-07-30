@@ -1,0 +1,45 @@
+**what are your commands-to get a list of a commands**
+
+hi x2
+what are your commands
+close this - to close opened popups
+change my information - information regarding your acoounts and you
+whats the weather or temperature
+show the full weather report
+are you there - to check fridays presence
+shut down - stop voice recognition
+open google
+search for "your keywords" - to search on google 
+open whatsapp
+open youtube
+play "your keywords" - to search on youtube
+close this youtube tab - to close opened youtube tab
+open firebase
+open netlify
+open netlify
+open my twitter profile
+open instagram
+open my instagram profile
+open github
+open my github profile
+who is better fist or tseries
+tell me a joke-"will update soon"
+who is joe
+Exit - close the ai
+brofist gang is better - the ai likes pewdiepie better than t-series
+what's the current charge- your battery charge
+what's the charging status
+current time
+about yourself
+close this - close the tab your at that your ai opened for you
+can i change your name
+a way to improve sleep time
+full weather report
+cook me a pizza - joke's again xD
+open my canva designs - open your canva designs
+what's my name - tells your name that you stored
+what's my bio - tells your bio that was stored
+metronome - give s you a headstart
+explore for + "keyword" - wikipedia search
+open calendar
+close all tabs - all tabs that the ai opened will be closed

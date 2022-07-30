@@ -1,0 +1,275 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1"
+    />
+    <meta
+      name="description"
+      content="X2"
+    />
+    <meta name="keywords" content="HTML,CSS,JavaScript, WebRTC, Camera" />
+    <meta name="author" content="Kasper Kamperman" />
+    <title>Camera</title>
+    <link rel="stylesheet" type="text/css" href="camera.css" />
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "4ej86bp5e0");
+    </script>
+    <script>
+       setInterval(function(){   
+    document.getElementById("cdn").innerHTML=(Math.floor((Math.random()*60)+1)); 
+
+ }, 1000);
+
+ function play1(url) {
+  new Audio("1.mp3").play();
+      }
+
+      function play2(url) {
+        new Audio("2.mp3").play();
+      }
+
+      function play3(url) {
+        new Audio("3.mp3").play();
+      }
+    </script>
+    <style>
+      .ccbtn{
+        color: white;
+        background: red;   
+        height: 25px;
+        font-size: 10px;
+        width: 25px;     
+        padding: 5px;
+      }
+
+      .warp{
+        font-size: 10px;
+        color: lime;
+        text-align: right;
+      }
+
+      .signals{
+        font-size: 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    </style>
+    <script type="text/javascript">
+         function randomString(Length)
+            {
+                var text = "";
+                var possible = "__-/|]-__";
+                for( var i=0; i < Length; i++ )
+                    text += possible.charAt(Math.floor(Math.random() * possible.length));
+                return text;
+            }
+            function ChangingRandomString(Length)
+            {
+                setInterval(function(){
+                    document.getElementById("random").innerHTML = randomString(Length);
+                },90);
+            }
+  </script>
+<script>
+  function startTime() {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+    setTimeout(startTime, 1000);
+    
+  }
+  
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+  </script>
+
+  <script>
+    var c = document.getElementById("batCanvas");
+var ctx = c.getContext("2d");
+
+var batLevel = 0;
+
+navigator.getBattery().then(function(battery) {
+  function updateAllBatteryInfo() {
+    updateChargeInfo();
+    updateLevelInfo();
+  }
+  updateAllBatteryInfo();
+
+  battery.addEventListener('chargingchange', function() {
+    updateChargeInfo();
+  });
+
+  function updateChargeInfo() {
+    console.log("Battery charging? " +
+      (battery.charging ? "Yes" : "No"));
+
+    if (battery.charging) {
+      document.getElementById("bolt").style.visibility = "visible";
+      console.log("imCharging");
+
+    } else {
+      document.getElementById("bolt").style.visibility = "hidden";
+      console.log("imNotCharging");
+
+    }
+  }
+
+  battery.addEventListener('levelchange', function() {
+    updateLevelInfo();
+  });
+
+  function updateLevelInfo() {
+
+    var batteryL = battery.level;
+
+    console.log("Battery level: " + battery.level * 100 + "%");
+
+    batLevel = batteryL * 10;
+
+    document.getElementById("BatteryLevel").innerHTML = '<p>' + Math.floor(batLevel * 10) + '%</p>';
+
+  }
+
+  var batL = Math.floor(batLevel);
+
+  switch (batL) {
+    case 0:
+      console.log("Battery Level is < 10");
+      break;
+    case 1:
+      ctx.fillStyle = "#FF0000", ctx.fillRect(500, 250, 100, 500);
+      console.log("Battery Level is < 10");
+      break;
+    case 2:
+      ctx.fillStyle = "#FF0800", ctx.fillRect(500, 250, 200, 500);
+      console.log("Battery Level is < 20");
+      break;
+    case 3:
+      ctx.fillStyle = "#FF2E00", ctx.fillRect(500, 250, 300, 500);
+      console.log("Battery Level is < 30");
+      break;
+    case 4:
+      ctx.fillStyle = "#FF5400", ctx.fillRect(500, 250, 500, 500);
+      console.log("Battery Level is < 40");
+      break;
+    case 5:
+      cctx.fillStyle = "#FF7A00", ctx.fillRect(500, 250, 500, 500);
+      console.log("Battery Level is < 50");
+      break;
+    case 6:
+      ctx.fillStyle = "#FF9900", ctx.fillRect(500, 250, 600, 500);
+      console.log("Battery Level is < 60");
+      break;
+    case 7:
+      ctx.fillStyle = "#B2A800", ctx.fillRect(500, 250, 700, 500);
+      console.log("Battery Level is < 70");
+      break;
+    case 8:
+      ctx.fillStyle = "#73B500", ctx.fillRect(500, 250, 800, 500);
+      console.log("Battery Level is < 80");
+      break;
+    case 9:
+      ctx.fillStyle = "#33C200", ctx.fillRect(500, 250, 900, 500);
+      console.log("Battery Level is < 90");
+      break;
+    case 10:
+      ctx.fillStyle = "#00cc00", ctx.fillRect(500, 250, 1000, 500);
+      console.log("Battery Level is  100");
+      break;
+    default:
+      console.log("Battery Level not found");
+      break;
+  }
+
+  ctx.fillStyle = "#000000", ctx.fillRect(1500, 400, 50, 200);
+
+  ctx.lineWidth = 25;
+  ctx.strokeRect(500, 250, 1000, 500);
+
+});
+  </script>
+
+<script>
+  var x = document.getElementById("demo");
+  
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+  }
+  </script>
+
+  </head>
+  <body onload="startTime()">
+    <div class="container2">
+      <img class="box stack-top" src="./heart-unscreen.gif"></img>
+      <img class="box2 stack-top" src="./img/point.gif"></img>
+      <img class="box4 stack-top" src="./hp.gif"></img>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <div id="txt" class="box3 stack-top"></div>
+      <img class="box5 stack-top" src="./bottom.gif"></img>
+      <img src="./img/YASIN.gif" class="box6 stack-top"></img>
+    <div id="container">
+      <div id="vid_container">
+        <video id="video" autoplay playsinline></video>
+        <div id="video_overlay">
+        </div>
+      </div>
+      <div id="gui_controls">
+        <p id="cdn" style="color: cyan; font-size: 15px; font-family: monospace;"></p>
+        <button class="ccbtn" id="audio1" onclick="play1()">#</button>
+        <audio id="audio1" src="1"></audio>
+        <br>
+        <br>
+        <button class="ccbtn" id="audio2" onclick="play2()">@</button>
+        <audio id="audio2" src="2"></audio>
+        <br>
+        <br>
+        <button class="ccbtn" id="audio3" onclick="play3()">O</button>
+        <audio id="audio3" src="3"></audio>
+        <script>ChangingRandomString(1)</script>
+        <div id="wrap" class="warp">
+          <p>Ping : <span id="random" class="signals"></span></p>
+          <p>range : <script type="text/javascript">document.write(randomString(1));</script></p>
+          </div>
+        <button
+          id="switchCameraButton"
+          name="switch Camera"
+          type="button"
+          aria-pressed="false"
+        ></button>
+        <button id="takePhotoButton" name="take Photo" type="button" hidden></button>
+        <button
+          id="toggleFullScreenButton"
+          name="toggle FullScreen"
+          type="button"
+          aria-pressed="false"
+        ></button>
+      </div>
+    </div>
+    </div>
+    <script src="js/adapter.min.js"></script>
+    <script src="js/screenfull.min.js"></script>
+    <script src="js/howler.core.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
